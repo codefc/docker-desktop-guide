@@ -6,7 +6,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: 'Code FC - Docker',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -32,6 +32,7 @@ module.exports = {
     repo: '',
     editLinks: false,
     docsDir: '',
+    base: '/docker-desktop-guide/',
     editLinkText: '',
     lastUpdated: false,
     sidebarDepth: 0,
@@ -79,19 +80,4 @@ module.exports = {
     }],
     ['vuepress-plugin-code-copy', true]
   ]
-}
-
-function getSideBar(folder, title) {
-  const extension = [".md"];
-
-  const files = fs
-    .readdirSync(path.join(`${__dirname}/../${folder}`))
-    .filter(
-      (item) =>
-        item.toLowerCase() != "index.md" &&
-        fs.statSync(path.join(`${__dirname}/../${folder}`, item)).isFile() &&
-        extension.includes(path.extname(item))
-    );
-
-  return [{ title: title, children: ["", ...files] }];
 }
