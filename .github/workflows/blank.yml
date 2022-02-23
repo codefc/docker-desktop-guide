@@ -28,7 +28,7 @@ jobs:
         uses: jenkey2011/vuepress-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACTION_SECRET }}
-          TARGET_REPO: codefc/docker-desktop-guide/docs
+          TARGET_REPO: codefc/docker-desktop-guide
           TARGET_BRANCH: gh-pages
           BUILD_SCRIPT: yarn && yarn build
           BUILD_DIR: docs/.vuepress/dist
