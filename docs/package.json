@@ -9,9 +9,9 @@
   },
   "repository": "https://github.com/codefc/docker-desktop-guide.git/docker-desktop-guide",
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src",
-    "docs:build": "vuepress build docs"
+    "dev": "vuepress dev",
+    "build": "vuepress build",
+    "docs:build": "vuepress build"
   },
   "license": "MIT",
   "devDependencies": {

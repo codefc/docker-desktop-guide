@@ -1,4 +1,4 @@
-const { description } = require('../../package')
+const { description } = require('../package')
 const fs = require("fs");
 const path = require("path");
 
