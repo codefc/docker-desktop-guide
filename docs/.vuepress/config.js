@@ -32,7 +32,7 @@ module.exports = {
     repo: '',
     editLinks: false,
     docsDir: '',
-    base: '/docker-desktop-guide/',
+   // base: '/docker-desktop-guide/',
     editLinkText: '',
     lastUpdated: false,
     sidebarDepth: 0,
