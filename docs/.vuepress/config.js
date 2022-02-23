@@ -11,6 +11,8 @@ module.exports = {
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
   description: description,
+  
+    base: '/docker-desktop-guide/',
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
@@ -32,7 +34,6 @@ module.exports = {
     repo: '',
     editLinks: false,
     docsDir: '',
-    base: '/docker-desktop-guide/',
     editLinkText: '',
     lastUpdated: false,
     sidebarDepth: 0,
