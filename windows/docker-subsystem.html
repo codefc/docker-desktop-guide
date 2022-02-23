@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configurando o Windows para utilização do Docker Engine | Code FC - Docker</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Um guia para se adequar ás novas diretrizes de uso do Docker Desktop">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/docker-desktop-guide/assets/css/0.styles.3c66e024.css" as="style"><link rel="preload" href="/docker-desktop-guide/assets/js/app.8224ce24.js" as="script"><link rel="preload" href="/docker-desktop-guide/assets/js/2.4565d8db.js" as="script"><link rel="preload" href="/docker-desktop-guide/assets/js/16.a8bbf76a.js" as="script"><link rel="prefetch" href="/docker-desktop-guide/assets/js/10.00cba3b9.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/11.7b751c1e.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/12.3eec8a9c.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/13.161720e1.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/14.884914e4.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/15.f5a8858e.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/17.c7ed9b6d.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/18.ccedc868.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/3.2edb4bf9.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/4.2f95a5c2.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/5.cd3a03a4.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/6.a3bdc31c.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/7.1c5b0a21.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/8.337c1cb6.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/9.0e7373d8.js">
+    <link rel="stylesheet" href="/docker-desktop-guide/assets/css/0.styles.3c66e024.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docker-desktop-guide/" class="home-link router-link-active"><!----> <span class="site-name">Code FC - Docker</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docker-desktop-guide/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/docker-desktop-guide/windows/" class="nav-link router-link-active">
+  Windows
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docker-desktop-guide/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/docker-desktop-guide/windows/" class="nav-link router-link-active">
+  Windows
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/docker-desktop-guide/" aria-current="page" class="sidebar-link">Home</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Windows</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docker-desktop-guide/windows/" aria-current="page" class="sidebar-link">Pré-requisitos</a></li><li><a href="/docker-desktop-guide/windows/docker-subsystem.html" aria-current="page" class="active sidebar-link">Docker no WSL2</a></li><li><a href="/docker-desktop-guide/windows/podman.html" class="sidebar-link">Podman</a></li></ul></section></li><li><a href="/docker-desktop-guide/linux/" class="sidebar-link">Linux</a></li><li><a href="/docker-desktop-guide/macos/" class="sidebar-link">MacOs</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="configurando-o-windows-para-utilizacao-do-docker-engine"><a href="#configurando-o-windows-para-utilizacao-do-docker-engine" class="header-anchor">#</a> Configurando o Windows para utilização do Docker Engine</h1> <p>Agora que temos o Ubuntu-20.04 configurado em WSL2, podemos instalar o Docker Engine.
+Para simplificar, execute os seguintes comandos no Ubuntu-20.04 para configurar o Docker Engine em sua máquina.</p> <ul><li>Update do Ubuntu-20.04 e instalação de pacotes que são pré-requisitos</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token punctuation">\</span>
+ apt-transport-https <span class="token punctuation">\</span>
+ ca-certificates <span class="token punctuation">\</span>
+ <span class="token function">curl</span> <span class="token punctuation">\</span>
+ gnupg <span class="token punctuation">\</span>
+ lsb-release
+</code></pre></div><ul><li>Adicionando a chave GPG oficial do Docker</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="token operator">|</span> <span class="token function">sudo</span> gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+</code></pre></div><ul><li>Configurando o repositório <em>stable</em> do Docker.</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token punctuation">\</span>
+ <span class="token string">&quot;deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+ <span class="token variable"><span class="token variable">$(</span>lsb_release -cs<span class="token variable">)</span></span> stable&quot;</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/docker.list <span class="token operator">&gt;</span> /dev/null
+</code></pre></div><ul><li>Atualizando o index do pacote apt com o repositório que adicionamos</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">apt-get</span> update
+</code></pre></div><ul><li>Instalação da versão mais nova do Docker Engine e o ContainerD necessários para o Docker rodar</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker-ce docker-ce-cli containerd.io
+</code></pre></div><ul><li>Iniciando o Docker no WSL</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">service</span> <span class="token function">docker</span> start
+</code></pre></div><ul><li>Criando o grupo docker</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">groupadd</span> <span class="token function">docker</span>
+</code></pre></div><ul><li>Adicionando o seu usuário ao grupo docker</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">usermod</span> -aG <span class="token function">docker</span> <span class="token environment constant">$USER</span>
+</code></pre></div><ul><li>Faça logout e login novamente no WSL para que sua associação ao grupo seja reavaliada.</li></ul> <h1 id="executar-comandos-do-docker"><a href="#executar-comandos-do-docker" class="header-anchor">#</a> Executar comandos do Docker</h1> <p>Neste ponto, você deve ter um Docker Engine totalmente operacional instalado em execução no Ubuntu-20.04 sob WSL2. Você pode verificar isso tentando executar a imagem hello-world do Docker Hub.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">docker</span> run hello-world
+</code></pre></div><p>Depois que isso for concluído, você deverá ver uma mensagem do docker indicando que foi bem-sucedido. Se você está vendo essa mensagem, está pronto para começar!</p> <ul><li>Caso seja necessário iniciar o serviço docker após reinicializar ou reiniciar o WSL2, utilize o comando abaixo ao entrar no Ubuntu novamente:</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">service</span> <span class="token function">docker</span> start
+</code></pre></div><h1 id="resumo"><a href="#resumo" class="header-anchor">#</a> Resumo</h1> <p>Com as etapas acima, você deve ter uma cópia de trabalho do Docker Engine rodando com WSL2!</p> <p>Se a sua cópia não estiver em execução, você pode verificar com os seguintes passos:</p> <ul><li>Certifique-se de que sua distribuição WSL esteja sendo executada em WSL2 utilizando o seguinte comando:</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code>wsl -l -v
+</code></pre></div><ul><li>Certifique-se de que o serviço docker esteja em execução, rode o comando abaixo para iniciar:</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">service</span> <span class="token function">docker</span> start.
+</code></pre></div><p>O Visual Studio Code é compatível com arquivos dentro do WSL, para abrir o VSCode de dentro do WSL Linux, acesse a pasta e digite <code>code .</code></p> <p>Caso queira acessar a pasta do linux no windows acesse menu executar&gt;\\wsl$ e dê enter e terá acesso as pastas do linux de dentro do Windows.
+<img src="arquivos/path_wsl.png" alt="Path WSL"></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docker-desktop-guide/windows/" class="prev router-link-active">
+        Pré-requisitos
+      </a></span> <span class="next"><a href="/docker-desktop-guide/windows/podman.html">
+        Podman
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docker-desktop-guide/assets/js/app.8224ce24.js" defer></script><script src="/docker-desktop-guide/assets/js/2.4565d8db.js" defer></script><script src="/docker-desktop-guide/assets/js/16.a8bbf76a.js" defer></script>
+  </body>
+</html>

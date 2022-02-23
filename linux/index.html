@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Instale usando o repositório | Code FC - Docker</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Um guia para se adequar ás novas diretrizes de uso do Docker Desktop">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/docker-desktop-guide/assets/css/0.styles.3c66e024.css" as="style"><link rel="preload" href="/docker-desktop-guide/assets/js/app.8224ce24.js" as="script"><link rel="preload" href="/docker-desktop-guide/assets/js/2.4565d8db.js" as="script"><link rel="preload" href="/docker-desktop-guide/assets/js/14.884914e4.js" as="script"><link rel="prefetch" href="/docker-desktop-guide/assets/js/10.00cba3b9.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/11.7b751c1e.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/12.3eec8a9c.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/13.161720e1.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/15.f5a8858e.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/16.a8bbf76a.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/17.c7ed9b6d.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/18.ccedc868.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/3.2edb4bf9.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/4.2f95a5c2.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/5.cd3a03a4.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/6.a3bdc31c.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/7.1c5b0a21.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/8.337c1cb6.js"><link rel="prefetch" href="/docker-desktop-guide/assets/js/9.0e7373d8.js">
+    <link rel="stylesheet" href="/docker-desktop-guide/assets/css/0.styles.3c66e024.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docker-desktop-guide/" class="home-link router-link-active"><!----> <span class="site-name">Code FC - Docker</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docker-desktop-guide/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/docker-desktop-guide/windows/" class="nav-link">
+  Windows
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docker-desktop-guide/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/docker-desktop-guide/windows/" class="nav-link">
+  Windows
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/docker-desktop-guide/" aria-current="page" class="sidebar-link">Home</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Windows</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docker-desktop-guide/windows/" class="sidebar-link">Pré-requisitos</a></li><li><a href="/docker-desktop-guide/windows/docker-subsystem.html" class="sidebar-link">Docker no WSL2</a></li><li><a href="/docker-desktop-guide/windows/podman.html" class="sidebar-link">Podman</a></li></ul></section></li><li><a href="/docker-desktop-guide/linux/" aria-current="page" class="active sidebar-link">Linux</a></li><li><a href="/docker-desktop-guide/macos/" class="sidebar-link">MacOs</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="instale-usando-o-repositorio"><a href="#instale-usando-o-repositorio" class="header-anchor">#</a> Instale usando o repositório</h1> <p>Antes de instalar o Docker Engine pela primeira vez em uma nova máquina host, você precisa configurar o repositório Docker. Depois disso, você pode instalar e atualizar o Docker a partir do repositório.</p> <h2 id="configure-o-repositorio"><a href="#configure-o-repositorio" class="header-anchor">#</a> Configure o repositório</h2> <ol><li>Atualize o pacote <em>apt</em> e instale os pacotes para permitir o uso do <em>apt</em> de um repositório por HTTPS:</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code> <span class="token function">sudo</span> <span class="token function">apt-get</span> update
+ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token punctuation">\</span>
+    ca-certificates <span class="token punctuation">\</span>
+    <span class="token function">curl</span> <span class="token punctuation">\</span>
+    gnupg <span class="token punctuation">\</span>
+    lsb-release
+</code></pre></div><ol start="2"><li>Adicione a chave GPG oficial do Docker:</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code> <span class="token function">curl</span> -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="token operator">|</span> <span class="token function">sudo</span> gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+</code></pre></div><ol start="3"><li>Use o seguinte comando para configurar o repositório <em>stable</em> .</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code> <span class="token builtin class-name">echo</span> <span class="token punctuation">\</span>
+  <span class="token string">&quot;deb [arch=<span class="token variable"><span class="token variable">$(</span>dpkg --print-architecture<span class="token variable">)</span></span> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  <span class="token variable"><span class="token variable">$(</span>lsb_release -cs<span class="token variable">)</span></span> stable&quot;</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/docker.list <span class="token operator">&gt;</span> /dev/null
+</code></pre></div><h2 id="instale-o-docker-engine"><a href="#instale-o-docker-engine" class="header-anchor">#</a> Instale o Docker Engine</h2> <ol><li>Atualize o pacote <em>apt</em> e instale a versão mais recente do Docker Engine e containerd:</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code> <span class="token function">sudo</span> <span class="token function">apt-get</span> update
+ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker-ce docker-ce-cli containerd.io
+</code></pre></div><ol start="2"><li>Verifique se o Docker Engine está instalado corretamente executando a imagem do hello-world.</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code> <span class="token function">sudo</span> <span class="token function">docker</span> run hello-world
+</code></pre></div><p>Este comando baixa uma imagem de teste e a executa em um container. Quando o container é executado, ele imprime uma mensagem e sai.</p> <p>O Docker Engine está instalado e em execução. O dockergroup é criado, mas nenhum usuário é adicionado a ele. Você precisa usar <em>sudo</em> para executar os comandos do Docker. Continue a pós-instalação do Linux para permitir que usuários sem privilégios executem comandos do Docker.</p> <ul><li>Adicionando o seu usuário ao grupo docker</li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">usermod</span> -aG <span class="token function">docker</span> <span class="token environment constant">$USER</span>
+</code></pre></div><ul><li>Faça logout e login novamente no seu usuário linux para que sua associação ao grupo seja revalidada.</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docker-desktop-guide/windows/podman.html" class="prev">
+        Podman
+      </a></span> <span class="next"><a href="/docker-desktop-guide/macos/">
+        MacOs
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/docker-desktop-guide/assets/js/app.8224ce24.js" defer></script><script src="/docker-desktop-guide/assets/js/2.4565d8db.js" defer></script><script src="/docker-desktop-guide/assets/js/14.884914e4.js" defer></script>
+  </body>
+</html>
