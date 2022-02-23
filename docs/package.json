@@ -1,0 +1,23 @@
+{
+  "name": "docker-desktop-guide",
+  "version": "0.0.1",
+  "description": "Um guia para se adequar ás novas diretrizes de uso do Docker Desktop",
+  "main": "index.js",
+  "authors": {
+    "name": "Albert Tanure",
+    "email": "albert.tanure@codefc.io"
+  },
+  "repository": "https://github.com/codefc/docker-desktop-guide.git/docker-desktop-guide",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-demo-code": "^0.6.0"
+  },
+  "dependencies": {
+    "vuepress-plugin-code-copy": "^1.0.6"
+  }
+}
